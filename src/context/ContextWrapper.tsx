@@ -76,7 +76,7 @@ const ContextWrapper = (props: Props) => {
 	}, [savedEvents, labels]);
 
 	useEffect(() => {
-		if (savedEvents) {
+		if (savedEvents.length) {
 			localStorage.setItem("savedEvents", JSON.stringify(savedEvents));
 		}
 	}, [savedEvents]);
