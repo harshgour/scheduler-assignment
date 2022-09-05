@@ -33,8 +33,10 @@ const savedEventsReducer = (state: any, { type, payload }: ActionType) => {
 			});
 		case "delete":
 			return state.filter((evt: any) => evt.id !== payload.id);
-		case "reset":
+		case "reset": {
+			localStorage.removeItem("savedEvents");
 			return [];
+		}
 		default:
 			throw new Error();
 	}
