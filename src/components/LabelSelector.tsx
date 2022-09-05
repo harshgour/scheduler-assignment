@@ -12,10 +12,10 @@ const LabelSelector = (props: Props) => {
 	const { labels, updateLabel } = useContext(GlobalContext);
 
 	return (
-		<div className='border-t mt-6'>
+		<>
 			{labels.length > 0 && (
-				<>
-					<p className='text-gray-500 font-bold mt-6'>Labels</p>
+				<div className='border-t p-5'>
+					<p className='text-gray-500 font-bold'>Labels</p>
 					{labels.map((lbl: LabelType, idx: number) => {
 						return (
 							<label key={idx} className='block mt-3 items-center'>
@@ -34,9 +34,9 @@ const LabelSelector = (props: Props) => {
 							</label>
 						);
 					})}
-				</>
+				</div>
 			)}
-		</div>
+		</>
 	);
 };
 
